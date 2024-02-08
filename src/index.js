@@ -4,13 +4,49 @@ function refreshWeather(response) {
   let temperatureElement = document.querySelector("#weather-temp");
   let temperature = Math.round(response.data.temperature.current);
   let iconElement = document.querySelector("#weather-icon");
+  let windElement = document.querySelector("#weather-wind");
+  let wind = response.data.wind.speed;
+  let pressureElement = document.querySelector("#weather-pressure");
+  let pressure = response.data.temperature.pressure;
+  let humidityElement = document.querySelector("#weather-humidity");
+  let humidity = response.data.temperature.humidity;
+
+  let timeElement = document.querySelector("#weather-date");
+  let date = new Date(response.data.time * 1000);
 
   console.log(response.data);
 
   cityElement.innerHTML = response.data.city;
   detailsElement.innerHTML = response.data.condition.description;
-  temperatureElement.innerHTML = `${temperature}°`;
+  timeElement.innerHTML = formatDate(date);
+  temperatureElement.innerHTML = `${temperature}°C`;
   iconElement.innerHTML = `<img src=${response.data.condition.icon_url} class="weather-icon">`;
+  windElement.innerHTML = `Wind: <strong> ${wind} km/h </strong>`;
+  pressureElement.innerHTML = `Pressure:<strong> ${pressure} hPa </strong> `;
+  humidityElement.innerHTML = `Humidity: <strong> ${humidity} % </strong>`;
+}
+
+function formatDate(date) {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[date.getDay()];
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${day}, ${hours}:${minutes}`;
 }
 
 function apiCity(city) {
