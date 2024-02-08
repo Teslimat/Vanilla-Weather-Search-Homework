@@ -8,6 +8,7 @@
       rel="stylesheet" />
     <link rel="stylesheet" href="src/styles.css" />
     <title>The Weather App</title>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </head>
 
   <body>
@@ -23,10 +24,12 @@
     </header>
     <div class="weather-app-container">
       <main>
-        <h1 id="weather-city">Stockholm, SE</h1>
-        <p class="weather-temp">23°</p>
-        <p class="weather-icon">🌤️</p>
-        <h2 class="weather-details">Clear Sky</h2>
+        <h1 id="weather-city"></h1>
+        <p class="weather-temp" id="weather-temp">°</p>
+        <div id="weather-icon">
+            
+        </div>
+        <h2 class="weather-details" id="weather-details"></h2>
         <p class="weather-date">Thursday 14:20 PM</p>
         <p class="weather-condition">
           <span>Wind: 5.7 m/s</span>
