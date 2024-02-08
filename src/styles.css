@@ -27,12 +27,13 @@ body {
 }
 
 .submit-city {
-  background-color: #0E1117;
+  background-color: #0e1117;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   color: white;
   font-size: 15px;
-  padding: 11px 13px;
+  padding: 11px 16px;
+  margin: -4px;
 }
 
 h1 {
@@ -60,9 +61,6 @@ h1 {
 .weather-condition strong {
   color: #f65282;
 }
-
-
-
 
 .weather-condition,
 .weather-date {
