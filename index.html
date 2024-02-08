@@ -3,35 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="src/styles.css" />
     <title>The Weather App</title>
   </head>
 
   <body>
-    <header>
-      <form>
-        <input type="search" placeholder="Search for a city" />
-        <input type="submit" value="🔍" />
+    <header class="weather-app-head">
+      <form id="search-form">
+        <input type="search" placeholder="Search for a city..." class="search-city" />
+        <input type="submit" value="☌" class="submit-city">
       </form>
     </header>
-
-    <main>
-        <h1>Paris</h1>
-        <p>23°</p>
-        <p>🌤️</p>
-        <h2>Clear Sky</h2>
-        <p>Thursday 14:20 PM</p>
-        <p>
-            <span>Wind 5.7 m/s</span>
-            <span>Pressure 1015 hPa</span>
-            <span>Humidity 50 %</span>
+    <div class="weather-app-container">
+      <main>
+        <h1>Stockholm, SE</h1>
+        <p class="weather-temp">23°</p>
+        <p class="weather-icon">🌤️</p>
+        <h2 class="weather-details">Clear Sky</h2>
+        <p class="weather-date"> Thursday 14:20 PM</p>
+        <p class="weather-condition"> 
+          <span>Wind: 5.7 m/s</span>
+          <span>Pressure: 1015 hPa</span>
         </p>
-    </main>
+        <p class="weather-condition">
+            <span>Humidity: 50 %</span>
+        </p>
+      </main>
 
-    <footer>
-      This project was coded by
-      <a href="">Teslimat Adeyemi</a>, is
-      <a href=""> open-sourced on GitHub</a> and the websure
-      <a href="">hosted on Netlify</a>
-    </footer>
+      <footer>
+        This project was coded by
+        <a href="">Teslimat Adeyemi</a>, is
+        <a href=""> open-sourced on GitHub</a> and the website
+        <a href="">hosted on Netlify</a>
+      </footer>
+    </div>
   </body>
 </html>
