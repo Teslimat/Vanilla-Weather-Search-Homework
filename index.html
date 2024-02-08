@@ -13,13 +13,13 @@
   <body>
     <header class="weather-app-head">
       <form id="search-form">
-        <input type="search" placeholder="Search for a city..." class="search-city" />
+        <input type="search" placeholder="Search for a city..." class="search-city"  id="search-city"/>
         <input type="submit" value="☌" class="submit-city">
       </form>
     </header>
     <div class="weather-app-container">
       <main>
-        <h1>Stockholm, SE</h1>
+        <h1 id="weather-city">Stockholm, SE</h1>
         <p class="weather-temp">23°</p>
         <p class="weather-icon">🌤️</p>
         <h2 class="weather-details">Clear Sky</h2>
@@ -41,4 +41,5 @@
       </footer>
     </div>
   </body>
+  <script src="src/index.js"></script>
 </html>
