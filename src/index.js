@@ -24,6 +24,8 @@ function refreshWeather(response) {
   windElement.innerHTML = `Wind: <strong> ${wind} km/h </strong>`;
   pressureElement.innerHTML = `Pressure:<strong> ${pressure} hPa </strong> `;
   humidityElement.innerHTML = `Humidity: <strong> ${humidity} % </strong>`;
+
+  getForeCast(response.data.city);
 }
 
 function formatDate(date) {
@@ -63,7 +65,15 @@ function formSearchsubmit(event) {
   apiCity(searchCity.value);
 }
 
-function displayForecast() {
+function getForeCast(city) {
+  let apiKey = "92dd828taa17b53d1feo43a40bd1ab2f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+    console.log(response.data);
+
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -94,4 +104,3 @@ let searchElement = document.querySelector("#search-form");
 searchElement.addEventListener("submit", formSearchsubmit);
 
 apiCity("Lagos");
-displayForecast();
